@@ -1,5 +1,5 @@
 // input details
-const name = document.getElementById('form-name');
+const fName = document.getElementById('form-name');
 const number = document.getElementById('form-number');
 const expMounth = document.getElementById('form-exp-month');
 const expYear = document.getElementById('form-exp-year');
@@ -18,4 +18,24 @@ number.addEventListener('input', (e) => {
 
    this.value = numberValue;
    cardNumberDisplay.textContent = numberValue;
+});
+
+fName.addEventListener('input', (e) => {
+   e.target.value = e.target.value.replace(/[^a-zA-Z ]/g, '').toUpperCase();
+   cardNameDisplay.textContent = e.target.value;
+});
+
+expMounth.addEventListener('input', (e) => {
+   e.target.value = e.target.value.replace(/\D/g, '');
+   cardExpMonthDisplay.textContent = e.target.value;
+});
+
+expYear.addEventListener('input', (e) => {
+   e.target.value = e.target.value.replace(/\D/g, '');
+   cardExpYearDisplay.textContent = e.target.value;
+});
+
+cvc.addEventListener('input', (e) => {
+   e.target.value = e.target.value.replace(/\D/g, '');
+   cardCvcDisplay.textContent = e.target.value;
 });
